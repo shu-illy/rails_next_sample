@@ -6,7 +6,7 @@ services:
     command: --character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci
     environment:
       MYSQL_ROOT_PASSWORD: password
-      MYSQL_DATABASE: sample
+      MYSQL_DATABASE: app_development
       MYSQL_PASSWORD: password
     ports:
       - 4306:3306
@@ -23,7 +23,11 @@ services:
       - 3000:3000
     volumes:
       - ./api:/app
-    command: rails server -b 0.0.0.0
+    command: |
+      bash -c "
+      rm -f /app/tmp/pids/server.pid &&
+      bundle exec rails s -p 3000 -b '0.0.0.0'
+      "
   front: 
     build:
       context: ./front/
