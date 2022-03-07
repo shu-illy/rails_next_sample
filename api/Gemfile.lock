@@ -132,7 +132,7 @@ GEM
       net-protocol
       timeout
     nio4r (2.5.8)
-    nokogiri (1.13.3-x86_64-linux)
+    nokogiri (1.13.3-x86_64-darwin)
       racc (~> 1.4)
     puma (5.6.2)
       nio4r (~> 2.0)
@@ -189,7 +189,7 @@ GEM
     zeitwerk (2.5.4)
 
 PLATFORMS
-  x86_64-linux
+  x86_64-darwin-20
 
 DEPENDENCIES
   annotate
@@ -214,4 +214,4 @@ RUBY VERSION
    ruby 3.0.3p157
 
 BUNDLED WITH
-   2.2.32
+   2.3.6
