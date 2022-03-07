@@ -1,21 +1,15 @@
-# MySQL. Versions 5.5.8 and up are supported.
-#
-# Install the MySQL driver
-#   gem install mysql2
-#
-# Ensure the MySQL gem is defined in your Gemfile
-#   gem "mysql2"
-#
-# And be sure to use new-style password hashing:
-#   https://dev.mysql.com/doc/refman/5.7/en/password-hashing.html
-#
 default: &default
   adapter: mysql2
   encoding: utf8mb4
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
   username: root
   password: password
-  host: db
+  # Dockerを使用する場合
+  # host: db
+  # Dockerを使用しない場合(ここから)
+  host: "localhost"
+  # port: <%=ENV.fetch("DB_PORT") { 3306 }%>
+  # Dockerを使用しない場合(ここまで)
 
 development:
   <<: *default
