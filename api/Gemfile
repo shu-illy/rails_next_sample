@@ -1,18 +1,26 @@
-source "https://rubygems.org"
+# frozen_string_literal: true
+
+source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-ruby "3.0.3"
+ruby '3.0.3'
 
-gem "rails", "~> 7.0.2", ">= 7.0.2.2"
-gem "mysql2", "~> 0.5"
-gem "puma", "~> 5.0"
-gem "redis", "~> 4.0"
-gem "tzinfo-data", platforms: %i[ mingw mswin x64_mingw jruby ]
-gem "bootsnap", require: false
-gem "jwt"
-gem "ransack"
-gem "rinku"
-gem "rack-cors"
+gem 'bootsnap', require: false
+gem 'jwt'
+gem 'mysql2', '~> 0.5'
+gem 'puma', '~> 5.0'
+gem 'rack-cors'
+gem 'rails', '~> 7.0.2', '>= 7.0.2.2'
+gem 'ransack'
+gem 'redis', '~> 4.0'
+gem 'ridgepole'
+gem 'rinku'
+gem 'rspec'
+gem 'rubocop'
+gem 'rubocop-performance'
+gem 'rubocop-rails'
+gem 'rubocop-rspec'
+gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
 
 # 必要に応じてコメントアウトを外す
 # gem 'friendly_id'
@@ -24,9 +32,8 @@ gem "rack-cors"
 # gem "bcrypt", "~> 3.1.7"
 # gem "image_processing", "~> 1.2"
 
-
 group :development, :test do
-  gem "debug", platforms: %i[ mri mingw x64_mingw ]
+  gem 'debug', platforms: %i[mri mingw x64_mingw]
   gem 'dotenv-rails'
   gem 'faker'
 end
@@ -35,8 +42,7 @@ group :development do
   # Speed up commands on slow machines / big apps [https://github.com/rails/spring]
   # gem "spring"
   gem 'annotate'
-  gem 'bullet'
   gem 'better_errors'
   gem 'binding_of_caller'
+  gem 'bullet'
 end
-
