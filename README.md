@@ -1,4 +1,4 @@
-# Rails + Next.js + TypeScript + Docker サンプル
+# Rails + Next.js + TypeScript + TailwindCSS + Docker サンプル
 
 ## 環境
 
