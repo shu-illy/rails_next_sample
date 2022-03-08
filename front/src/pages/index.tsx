@@ -1,5 +1,6 @@
 import React, { FC } from "react";
-import { GetStaticProps } from "next";
+import Auth from "src/components/Auth";
+import Layout from "src/components/Layout";
 
 type Post = {
   id: number;
@@ -12,29 +13,11 @@ type Props = {
 
 const Home: FC<Props> = (props) => {
   return (
-    <div>
-      <h2>POSTの一覧</h2>
-      <table>
-	{props.posts.map((post) =>
-	  <tr>
-	    <td>{post.id}.</td>
-	    <td>{post.title}</td>
-	  </tr>
-        )}
-      </table>
-    </div>
+    <Layout title="Login">
+      <Auth />
+    </Layout>
   )
 }
 
-export const getStaticProps: GetStaticProps = async context => {
-  const response = await fetch(`http://${process.env.HOST}:${process.env.API_PORT}/posts`, {method: "GET"});
-  const json = await response.json();
-
-  return {
-    props: {
-      posts: json
-    },
-  };
-}
 
 export default Home;
